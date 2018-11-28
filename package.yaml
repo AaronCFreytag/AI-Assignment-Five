@@ -1,0 +1,51 @@
+name:                ai-assignment-five
+version:             0.1.0.0
+github:              "AaronCFreytag/ai-assignment-five"
+license:             BSD3
+author:              "Aaron Freytag"
+maintainer:          "aaroncfreytag@gmail.com"
+copyright:           "2018 Aaron Freytag"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/ai-assignment-five#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- repa
+- vector
+- ansi-terminal
+
+library:
+  source-dirs: src
+
+executables:
+  ai-assignment-five-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ai-assignment-five
+
+tests:
+  ai-assignment-five-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ai-assignment-five
